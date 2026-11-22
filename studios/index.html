@@ -245,12 +245,12 @@ input[type=range]:focus-visible{outline:2px solid #5E2B97;outline-offset:6px}
 <script src="/js/dc-lite.js"></script>
 
 <script>
-/* Form delivery: sends sign-ups to the ACTVPASS inbox. Change ACTV_FORM_ENDPOINT to switch provider. */
-window.ACTV_FORM_ENDPOINT = 'https://formsubmit.co/ajax/contact@actvpass.com';
+/* Form delivery: sends sign-ups to the ACTVPASS Google Sheet (Apps Script web app), which also emails the person. */
+window.ACTV_FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzqoteHgfzUwtggL_J4H1o1vw1nb8zyviiEmDI7CTFjW2qxCcYGwxcI9GGUqiRcgnb2/exec';
 window.actvSubmit = function (kind, data) {
-  var body = Object.assign({ _subject: 'ACTVPASS website — ' + kind, _template: 'table', _captcha: 'false', form: kind, page: location.pathname }, data);
-  return fetch(window.ACTV_FORM_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(body) })
-    .then(function (r) { return r.ok; }).catch(function () { return false; });
+  var body = Object.assign({ form: kind, page: location.pathname }, data);
+  return fetch(window.ACTV_FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(body) })
+    .then(function () { return true; }).catch(function () { return false; });
 };
 </script>
 <script>

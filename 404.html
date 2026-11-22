@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ACTVPASS — Every class. One app.</title>
+<meta name="description" content="Egypt&#x27;s top fitness studios in one app. One membership, credits that work across studios — book any class in seconds.">
+<meta property="og:title" content="ACTVPASS — Every class. One app.">
+<meta property="og:description" content="Egypt&#x27;s top fitness studios in one app. One membership, credits that work across studios — book any class in seconds.">
+<meta property="og:image" content="https://actvpass.com/assets/og.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#000}
+*{box-sizing:border-box}
+a{color:#FFFFFF;text-decoration:none}
+::selection{background:#5E2B97;color:#FFFFFF}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.x{font-family:'Archivo',sans-serif;font-variation-settings:'wdth' 108;font-weight:500;text-transform:uppercase;letter-spacing:-0.02em;line-height:.9}
+.cap{font-family:'Archivo',sans-serif;font-variation-settings:'wdth' 108;font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.vh{height:100vh;min-height:620px}
+.wbtn{display:inline-flex;align-items:center;justify-content:center;height:50px;padding:0 28px;border:0;border-radius:999px;background:#FFFFFF;color:#000000;cursor:pointer;transition:background .3s ease,color .3s ease}
+.wbtn:hover{background:#E6E6E6;color:#000000}
+.nl{position:relative;padding:6px 0;color:#BDBDBD;transition:color .3s ease}
+.nl:hover{color:#FFFFFF}
+.shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:opacity .7s ease}
+.shot.live{animation:push 3.4s cubic-bezier(.2,.6,.3,1) both}
+.grain{position:absolute;inset:-100%;width:300%;height:300%;pointer-events:none;opacity:.12;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1.2s steps(6) infinite}
+.seg{display:block;height:2px;background:rgba(255,255,255,.22);overflow:hidden}
+.seg > span{display:block;height:100%;background:#FFFFFF;transform-origin:left center}
+.seg > span.run{animation:fill 2.8s linear both}
+.field{display:flex;align-items:center;gap:6px;height:64px;padding:6px 6px 6px 24px;border-radius:999px;background:#FFFFFF;border:2px solid #FFFFFF;box-shadow:0 24px 60px -24px rgba(0,0,0,.7);transition:border-color .3s ease,box-shadow .3s ease}
+.gobtn{flex:none;height:50px;padding:0 24px;border:0;border-radius:999px;background:#0A0A0A;color:#FFFFFF;cursor:pointer;transition:background .3s ease}
+.gobtn:hover{background:#5E2B97}
+.field:focus-within{border-color:#5E2B97;box-shadow:0 0 0 5px rgba(94,43,151,.35)}
+.field input{flex:1 1 auto;min-width:0;height:100%;padding:0;border:0;background:transparent;font:400 17px 'Archivo',sans-serif;color:#0A0A0A;outline:none}
+.field input::placeholder{color:#8A8A8F}
+.cls{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity 1.1s ease,transform 4s cubic-bezier(.2,.6,.3,1)}
+.crow{transition:color .5s ease}
+.card .p{transition:opacity .9s ease}
+.card:hover .p{opacity:1 !important}
+.card img{transition:opacity .9s ease,transform 1.6s cubic-bezier(.2,.7,.1,1)}
+.card:hover img{transform:scale(1.04)}
+.ans{display:grid;transition:grid-template-rows .55s cubic-bezier(.2,.7,.1,1)}
+.ans > div{overflow:hidden}
+.plus{transition:transform .5s cubic-bezier(.2,.7,.1,1)}
+.slowzoom{animation:slowzoom 24s ease-in-out infinite alternate}
+.room{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity 1.3s ease}
+.issue{animation:issue .8s cubic-bezier(.2,.8,.2,1) both}
+.drow{transition:background .3s ease}
+.bk{height:46px;padding:0 18px;border:0;border-radius:999px;cursor:pointer;transition:background .3s ease,color .3s ease}
+.bk:hover{filter:brightness(1.1)}
+@keyframes issue{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.rise{animation:rise 1.4s cubic-bezier(.16,.8,.2,1) both}
+@keyframes push{from{transform:scale(1.16)}to{transform:scale(1.02)}}
+@keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-5%,3%)}40%{transform:translate(4%,-6%)}60%{transform:translate(-7%,-2%)}80%{transform:translate(6%,5%)}100%{transform:translate(0,0)}}
+@keyframes slowzoom{from{transform:scale(1.12)}to{transform:scale(1)}}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@media (max-width:1000px){.navmid{display:none !important}.hb{grid-template-columns:minmax(0,1fr) !important}.split,.how,.faqg,.demo{grid-template-columns:minmax(0,1fr) !important}.cards{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<template id="dc-tpl">
+<div style="font-family: 'Archivo', sans-serif; color: #FFFFFF; background: #000000; overflow-x: clip; -webkit-font-smoothing: antialiased">
+
+<!-- HERO REEL -->
+<section id="top" class="vh" aria-label="ACTVPASS" style="position: relative; overflow: hidden; background: #000000; height: {{heroH}}; clip-path: inset(12px round 32px)">
+<sc-for list="{{reel.shots}}" as="s" hint-placeholder-count="5">
+<img class="shot {{s.k}}" src="{{s.src}}" alt="" style="opacity: {{s.o}}">
+</sc-for>
+<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.6) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 50%, rgba(0,0,0,.8) 100%)"></div>
+<div aria-hidden="true" style="position: absolute; inset: 0; overflow: hidden"><div class="grain"></div></div>
+
+<header style="position: absolute; left: 0; right: 0; top: 0; z-index: 5; height: 92px; padding: 0 48px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center">
+<a href="#top" aria-label="ACTVPASS home" style="display: flex; justify-self: start"><img src="/assets/wordmark-white.png" alt="ACTVPASS" style="height: 18px; width: auto"></a>
+<nav class="navmid cap" aria-label="Main" style="display: flex; gap: 40px"><a href="#top" class="nl" aria-current="page" style="color: #FFFFFF">Our App</a><a href="/studios/" class="nl">For Studios</a><a href="#how" class="nl">How it works</a><a href="#faq" class="nl">FAQ</a></nav>
+<a href="#join" class="wbtn cap" style="justify-self: end; height: 46px; padding: 0 22px">Join the waitlist</a>
+</header>
+
+<div class="hb" style="position: absolute; left: 48px; right: 48px; bottom: 56px; z-index: 4; display: grid; grid-template-columns: minmax(0, 1fr) 440px; gap: 48px; align-items: end">
+<div class="rise">
+<p class="cap" style="margin: 0 0 26px; display: flex; align-items: center; gap: 12px; color: #FFFFFF"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #FFFFFF"></span>Fitness made flexible</p>
+<h1 class="x" style="margin: 0; font-size: clamp(56px, min(9.4vw, 15vh), 136px)">Every class.<br>One app.</h1>
+</div>
+<div class="rise" style="display: flex; flex-direction: column; gap: 18px; animation-delay: .15s">
+<p style="margin: 0; font-size: 19px; line-height: 1.5; color: #FFFFFF">Credits that work across Egypt's top studios — book any class in seconds.</p>
+<p class="cap" style="margin: 0; color: #FFFFFF">Early access to Egypt's top studios</p>
+<sc-if value="{{hero.open}}" hint-placeholder-val="{{ true }}">
+<div class="field"><label for="pr-mail" class="sr">Email</label><input id="pr-mail" type="email" placeholder="Enter your email address" value="{{hero.email}}" onChange="{{hero.change}}"><button type="button" class="gobtn cap" onClick="{{hero.submit}}">Get early access</button></div>
+<p role="status" class="cap" style="margin: 0; padding-left: 24px; min-height: 14px; color: #FFFFFF">{{hero.err}}</p>
+</sc-if>
+<sc-if value="{{hero.done}}" hint-placeholder-val="{{ false }}">
+<p role="status" class="cap" style="margin: 0; height: 50px; display: flex; align-items: center; gap: 12px"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #FFFFFF"></span>You're on the list</p>
+</sc-if>
+<div style="display: flex; flex-direction: column; gap: 12px; margin-top: 18px">
+<div style="display: flex; justify-content: space-between"><span class="cap" role="status" style="color: #FFFFFF">{{reel.label}}</span><span class="cap" style="color: #B5B5B5">{{reel.num}}</span></div>
+<div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px">
+<sc-for list="{{reel.bars}}" as="b" hint-placeholder-count="5">
+<button type="button" onClick="{{b.go}}" aria-label="{{b.aria}}" style="padding: 8px 0; border: 0; background: transparent; cursor: pointer"><span class="seg"><span class="{{b.k}}" style="transform: {{b.tf}}"></span></span></button>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- HOW IT WORKS: LIVE DEMO (lights on) -->
+<section id="how" aria-labelledby="how-h" style="background: #FFFFFF; color: #0A0A0A; padding: 160px 48px">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap; margin-bottom: 72px">
+<div>
+<p class="cap" style="margin: 0 0 24px; display: flex; align-items: center; gap: 12px; color: #5E2B97"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #5E2B97"></span>How it works</p>
+<h2 id="how-h" class="x" style="margin: 0; font-size: clamp(52px, 6.6vw, 100px)">Fitness made<br>flexible<span style="color: #5E2B97">.</span></h2>
+</div>
+<p style="margin: 0; max-width: 420px; font-size: 18px; line-height: 1.55; color: #3A3A3F">ACTVPASS gives you access to Egypt's top fitness studios, all in one app. Try it — book a class below.</p>
+</div>
+<div class="demo" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr); gap: 24px; align-items: stretch">
+<div style="display: flex; flex-direction: column; gap: 28px">
+<ol aria-label="Steps" style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px">
+<sc-for list="{{demo.steps}}" as="st" hint-placeholder-count="3">
+<li style="padding-top: 18px; border-top: 3px solid {{st.bc}}; border-radius: 2px; color: {{st.c}}; transition: color .5s ease, border-color .5s ease"><span class="cap" style="display: block; margin-bottom: 12px">{{st.n}}{{st.mark}}</span><span class="x" style="display: block; font-size: 26px; line-height: 1">{{st.t}}</span><span style="display: block; margin-top: 10px; font-size: 14px; line-height: 1.45; color: {{st.sc}}">{{st.d}}</span></li>
+</sc-for>
+</ol>
+<div style="flex: 1 1 auto; background: #F4F4F4; border-radius: 28px; padding: 32px; display: flex; flex-direction: column">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; padding-bottom: 24px; border-bottom: 1px solid rgba(10,10,10,.1)">
+<div><p class="cap" style="margin: 0 0 12px; color: #6A6A70">Your credits</p><p class="x" aria-live="polite" style="margin: 0; font-size: 72px"><span style="color: {{demo.balC}}; transition: color .4s ease">{{demo.bal}}</span><span style="font-size: 24px; color: #9A9AA0"> / 20</span></p></div>
+<p class="cap" style="margin: 0; text-align: right; line-height: 1.8; color: #6A6A70">Example plan<br>Credits never expire</p>
+</div>
+<sc-for list="{{demo.rows}}" as="r" hint-placeholder-count="4">
+<div class="drow" onMouseEnter="{{r.focus}}" style="display: grid; grid-template-columns: 96px minmax(0, 1fr) 96px 150px; align-items: center; gap: 16px; padding: 16px 14px; margin-top: 6px; border-radius: 18px; background: {{r.bg}}">
+<span class="cap" style="color: #3A3A3F">{{r.time}}</span>
+<div style="min-width: 0"><p class="x" style="margin: 0; font-size: 28px">{{r.name}}</p><p style="margin: 6px 0 0; font-size: 14px; color: #6A6A70">{{r.area}}</p></div>
+<span class="cap" style="color: #0A0A0A">{{r.cr}} credits</span>
+<button type="button" class="bk cap" onClick="{{r.book}}" onFocus="{{r.focus}}" aria-pressed="{{r.on}}" aria-label="{{r.aria}}" style="background: {{r.bb}}; color: {{r.bf}}">{{r.btn}}</button>
+</div>
+</sc-for>
+<p role="status" style="margin: 20px 0 0; min-height: 22px; font-size: 15px; color: #5E2B97">{{demo.note}}</p>
+</div>
+</div>
+<div style="position: relative; min-height: 700px; border-radius: 28px; overflow: hidden; background: #0A0A0A; color: #FFFFFF">
+<sc-for list="{{room.imgs}}" as="im" hint-placeholder-count="8">
+<img class="room" src="{{im.src}}" alt="" style="opacity: {{im.o}}">
+</sc-for>
+<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 50%, rgba(0,0,0,.75) 100%)"></div>
+<span aria-hidden="true" style="position: absolute; left: 14%; right: 14%; top: 0; height: 3px; border-radius: 3px; background: #FFFFFF; box-shadow: 0 0 28px 8px rgba(166,108,255,.8); opacity: {{room.lit}}; transition: opacity .7s ease"></span>
+<div style="position: absolute; left: 28px; right: 28px; top: 28px; display: flex; justify-content: space-between"><span class="cap">Room view</span><span class="cap" style="display: flex; align-items: center; gap: 10px; color: {{room.stC}}"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: {{room.stC}}"></span>{{room.state}}</span></div>
+<sc-if value="{{room.booked}}" hint-placeholder-val="{{ false }}">
+<div class="issue" role="status" style="position: absolute; left: 20px; right: 20px; bottom: 20px; padding: 26px 28px; border-radius: 22px; background: rgba(10,10,10,.7); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); border: 1px solid rgba(255,255,255,.18)">
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px"><img src="/assets/wordmark-white.png" alt="ACTVPASS" style="height: 12px; width: auto"><span class="cap" style="display: flex; align-items: center; gap: 10px; color: #FFFFFF"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #FFFFFF"></span>Booked</span></div>
+<p class="x" style="margin: 0 0 22px; font-size: 56px">{{room.name}}</p>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.2)">
+<div><p class="cap" style="margin: 0 0 8px; color: #B5B5B5">Time</p><p style="margin: 0; font-size: 16px">{{room.time}}</p></div>
+<div><p class="cap" style="margin: 0 0 8px; color: #B5B5B5">Where</p><p style="margin: 0; font-size: 16px">{{room.area}}</p></div>
+<div><p class="cap" style="margin: 0 0 8px; color: #B5B5B5">Credits</p><p style="margin: 0; font-size: 16px">{{room.cr}}</p></div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{room.idle}}" hint-placeholder-val="{{ true }}">
+<div style="position: absolute; left: 28px; right: 28px; bottom: 30px">
+<p class="cap" style="margin: 0 0 14px; color: #D0D0D0">{{room.area}} · {{room.time}}</p>
+<p class="x" style="margin: 0 0 16px; font-size: 56px">{{room.name}}</p>
+<p style="margin: 0; font-size: 17px; color: #FFFFFF">Book this class to turn the lights on.</p>
+</div>
+</sc-if>
+</div>
+</div>
+<p class="cap" style="margin: 22px 0 0; color: #8A8A90">Example classes and credit values</p>
+</section>
+
+<!-- MANIFESTO -->
+<section style="padding: 220px 48px 200px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 44px">
+<h2 class="x" style="margin: 0; font-size: clamp(52px, 7.4vw, 112px)">Consistency<br>needs flexibility<span style="color: #FFFFFF">.</span></h2>
+<p class="cap" style="margin: 0; max-width: 560px; line-height: 1.7; color: #B5B5B5">ACTVPASS gives you access to Egypt's top fitness studios, all in one app.</p>
+</section>
+
+<!-- NUMBERS -->
+<section class="split" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border-top: 1px solid rgba(255,255,255,.12)">
+<div style="position: relative; min-height: 820px; margin: 12px; border-radius: 32px; overflow: hidden; background: #0A0A0A"><img class="slowzoom" src="/assets/reformer-purple.jpg" alt="Reformer studio" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></div>
+<div style="padding: 120px 64px; display: flex; flex-direction: column; justify-content: center">
+<div style="padding: 36px 0; border-bottom: 1px solid rgba(255,255,255,.14)"><p class="x" style="margin: 0; font-size: clamp(56px, 6vw, 92px)">3 cities</p><p class="cap" style="margin: 18px 0 0; color: #B5B5B5">Cairo · El Gouna · North Coast</p></div>
+<div style="padding: 36px 0; border-bottom: 1px solid rgba(255,255,255,.14)"><p class="x" style="margin: 0; font-size: clamp(56px, 6vw, 92px)">1 app</p><p class="cap" style="margin: 18px 0 0; color: #B5B5B5">Every studio. One membership.</p></div>
+<div style="padding: 36px 0"><p class="x" style="margin: 0; font-size: clamp(56px, 6vw, 92px)">0 expiry</p><p class="cap" style="margin: 18px 0 0; color: #B5B5B5">Your credits never expire</p></div>
+</div>
+</section>
+
+<!-- CLASSES: THE ROOM -->
+<section aria-labelledby="cls-h" style="position: relative; height: 920px; overflow: hidden; background: #000000; clip-path: inset(12px round 32px)">
+<sc-for list="{{cls.imgs}}" as="c" hint-placeholder-count="5">
+<img class="cls" src="{{c.src}}" alt="" style="opacity: {{c.o}}; transform: scale({{c.z}})">
+</sc-for>
+<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.4) 45%, rgba(0,0,0,0) 100%)"></div>
+<div aria-hidden="true" style="position: absolute; inset: 0; overflow: hidden"><div class="grain"></div></div>
+<div style="position: relative; height: 100%; padding: 110px 48px; display: flex; flex-direction: column; justify-content: space-between">
+<h2 id="cls-h" class="cap" style="margin: 0; color: #FFFFFF">Explore every way to train</h2>
+<div onMouseLeave="{{cls.resume}}" style="display: flex; flex-direction: column">
+<sc-for list="{{cls.rows}}" as="r" hint-placeholder-count="5">
+<button type="button" class="crow x" onMouseEnter="{{r.pick}}" onFocus="{{r.pick}}" onClick="{{r.pick}}" aria-pressed="{{r.on}}" style="display: flex; align-items: center; gap: 22px; padding: 8px 0; border: 0; background: transparent; cursor: pointer; text-align: left; font-size: clamp(52px, 6.6vw, 100px); color: {{r.c}}"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; border-radius: 50%; background: #FFFFFF; opacity: {{r.dot}}; transition: opacity .4s ease"></span>{{r.name}}</button>
+</sc-for>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px">
+<p role="status" style="margin: 0; font-size: 20px; color: #FFFFFF">{{cls.line}}</p>
+<span class="cap" style="color: #B5B5B5">{{cls.num}}</span>
+</div>
+</div>
+</section>
+
+<!-- WHY: ROOMS LIGHT UP -->
+<section style="padding: 180px 48px; background: #FFFFFF; color: #0A0A0A">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; margin-bottom: 64px; flex-wrap: wrap">
+<h2 class="x" style="margin: 0; font-size: clamp(52px, 6.6vw, 100px)">Why ACTVPASS<span style="color: #5E2B97">.</span></h2>
+<p class="cap" style="margin: 0; color: #5E2B97">Hover to turn the lights on</p>
+</div>
+<div class="cards" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px">
+<figure class="card" style="margin: 0; display: flex; flex-direction: column; gap: 22px"><div style="position: relative; height: 560px; border-radius: 24px; overflow: hidden; background: #0A0A0A"><img src="/assets/spin-mono.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"><img class="p" src="/assets/spin-purple.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0"></div><figcaption class="x" style="font-size: 24px; line-height: 1">Different studios, different workouts</figcaption></figure>
+<figure class="card" style="margin: 0; display: flex; flex-direction: column; gap: 22px"><div style="position: relative; height: 560px; border-radius: 24px; overflow: hidden; background: #0A0A0A"><img src="/assets/reformer-mono.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"><img class="p" src="/assets/reformer-purple.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0"></div><figcaption class="x" style="font-size: 24px; line-height: 1">Only the best studios</figcaption></figure>
+<figure class="card" style="margin: 0; display: flex; flex-direction: column; gap: 22px"><div style="position: relative; height: 560px; border-radius: 24px; overflow: hidden; background: #0A0A0A"><img src="/assets/stretch-mono.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"><img class="p" src="/assets/stretch-purple.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0"></div><figcaption class="x" style="font-size: 24px; line-height: 1">Train your way</figcaption></figure>
+<figure class="card" style="margin: 0; display: flex; flex-direction: column; gap: 22px"><div style="position: relative; height: 560px; border-radius: 24px; overflow: hidden; background: #0A0A0A"><img src="/assets/hiit-mono.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"><img class="p" src="/assets/hiit-purple.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0"></div><figcaption class="x" style="font-size: 24px; line-height: 1">Under one membership</figcaption></figure>
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" aria-labelledby="faq-h" style="padding: 180px 48px; background: #FFFFFF; color: #0A0A0A; border-top: 1px solid rgba(10,10,10,.08)">
+<div class="faqg" style="display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 48px; align-items: start">
+<h2 id="faq-h" class="x" style="margin: 0; font-size: clamp(52px, 6.6vw, 100px)">FAQ</h2>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<sc-for list="{{faq}}" as="q" hint-placeholder-count="8">
+<div style="padding: 0 28px; border-radius: 22px; background: #F4F4F4">
+<button type="button" aria-expanded="{{q.open}}" onClick="{{q.toggle}}" style="width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 26px 0; border: 0; background: transparent; text-align: left; cursor: pointer; color: #0A0A0A"><span class="x" style="font-size: 22px; line-height: 1.15; letter-spacing: -0.01em">{{q.q}}</span><span class="plus" aria-hidden="true" style="flex: none; font-size: 26px; font-weight: 300; transform: rotate({{q.rot}}deg)">+</span></button>
+<div class="ans" style="grid-template-rows: {{q.rows}}"><div><p style="margin: 0 0 28px; max-width: 620px; font-size: 17px; line-height: 1.6; color: #4A4A4F">{{q.a}}</p></div></div>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- JOIN -->
+<section id="join" style="position: relative; height: 880px; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; clip-path: inset(12px round 32px)">
+<img class="slowzoom" src="/assets/studio-purple.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(0,0,0,.25), rgba(0,0,0,.7))"></div>
+<div aria-hidden="true" style="position: absolute; inset: 0; overflow: hidden"><div class="grain"></div></div>
+<div style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 30px; padding: 0 48px">
+<h2 class="x" style="margin: 0; font-size: clamp(52px, 7.4vw, 112px)">Ready to train<br>differently?</h2>
+<p style="margin: 0; font-size: 18px; color: #FFFFFF">Access Egypt's best studios — all in one app.</p>
+<sc-if value="{{cta.open}}" hint-placeholder-val="{{ true }}">
+<div class="field" style="width: 520px; max-width: 86vw; margin-top: 10px"><label for="pr-mail2" class="sr">Email</label><input id="pr-mail2" type="email" placeholder="Enter your email address" value="{{cta.email}}" onChange="{{cta.change}}"><button type="button" class="gobtn cap" onClick="{{cta.submit}}">Get early access</button></div>
+<p role="status" class="cap" style="margin: 14px 0 0; min-height: 14px; color: #FFFFFF">{{cta.err}}</p>
+</sc-if>
+<sc-if value="{{cta.done}}" hint-placeholder-val="{{ false }}">
+<p role="status" class="cap" style="margin: 10px 0 0; height: 50px; display: flex; align-items: center; gap: 12px"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #FFFFFF"></span>You're on the list</p>
+</sc-if>
+</div>
+</section>
+
+<footer style="padding: 64px 48px 32px; border-top: 1px solid rgba(255,255,255,.12); display: flex; flex-direction: column; gap: 56px">
+<img src="/assets/wordmark-white.png" alt="ACTVPASS" style="width: 100%; height: auto">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px">
+<nav aria-label="Footer" class="cap" style="display: flex; flex-wrap: wrap; gap: 32px"><a href="/privacy/" class="nl">Privacy policy</a><a href="/terms/" class="nl">Terms &amp; conditions</a><a href="/studios/" class="nl">For studios</a></nav>
+<span class="cap" style="color: #6A6A6A">© 2026 ACTVPASS a Sobek Egypt Company</span>
+</div>
+</footer>
+
+</div>
+</template>
+<script src="/js/morphdom.min.js"></script>
+<script src="/js/dc-lite.js"></script>
+
+<script>
+/* Form delivery: sends sign-ups to the ACTVPASS inbox. Change ACTV_FORM_ENDPOINT to switch provider. */
+window.ACTV_FORM_ENDPOINT = 'https://formsubmit.co/ajax/contact@actvpass.com';
+window.actvSubmit = function (kind, data) {
+  var body = Object.assign({ _subject: 'ACTVPASS website — ' + kind, _template: 'table', _captcha: 'false', form: kind, page: location.pathname }, data);
+  return fetch(window.ACTV_FORM_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(body) })
+    .then(function (r) { return r.ok; }).catch(function () { return false; });
+};
+</script>
+<script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.REEL = [
+      { src: '/assets/reformer-purple.jpg', label: 'Reformer — New Cairo' },
+      { src: '/assets/hiit-purple.jpg', label: 'HIIT — New Cairo' },
+      { src: '/assets/spin-purple.jpg', label: 'Spin — Sheikh Zayed' },
+      { src: '/assets/studio-purple.jpg', label: 'Strength — Sheikh Zayed' },
+      { src: '/assets/stretch-purple.jpg', label: 'Stretch — Zamalek' }
+    ];
+    this.CLS = [
+      { n: 'Reformer', line: 'Precision, control, and strength', src: '/assets/reformer-purple.jpg' },
+      { n: 'HIIT', line: 'High intensity. Maximum output', src: '/assets/hiit-purple.jpg' },
+      { n: 'Spin', line: 'Endurance-driven, high-energy sessions', src: '/assets/spin-purple.jpg' },
+      { n: 'Strength', line: 'Power, speed, and conditioning', src: '/assets/studio-purple.jpg' },
+      { n: 'Stretch', line: 'Recovery, mobility, and balance', src: '/assets/stretch-purple.jpg' }
+    ];
+    this.FAQ = [
+      ['How does ACTVPASS work?', "ACTVPASS gives you access to Egypt's top fitness studios through one app. You subscribe to a monthly plan, receive credits, and use them to book classes across different studios."],
+      ['What are credits and how do I use them?', 'Credits are used to book classes. Each class has a set credit value depending on the studio and time. Choose a class and reserve your spot using your credits.'],
+      ['What subscription plans are available?', 'ACTVPASS offers different monthly plans based on how often you train. The more credits you choose, the better the value per class.'],
+      ['Do my credits expire?', 'No — your credits never expire. Any unused credits stay in your account until you use them.'],
+      ['Can I cancel my subscription anytime?', 'Yes. You can cancel anytime with no commitments. Even after cancelling, your remaining credits stay in your account.'],
+      ['What kind of studios will I have access to?', 'Only premium, curated studios. From Pilates and yoga to HIIT and boxing — every studio is selected for its quality and experience.'],
+      ['What happens if I run out of credits?', 'You can purchase a new credit package at any time.'],
+      ['Where is ACTVPASS available?', 'ACTVPASS is currently available in Cairo, El Gouna, and the North Coast — here for you wherever you go.']
+    ];
+    this.DEMO = [
+      { t: '7:00 AM', n: 'Reformer', a: 'New Cairo', c: 6, on: '/assets/reformer-purple.jpg', off: '/assets/reformer-mono.jpg' },
+      { t: '12:15 PM', n: 'HIIT', a: 'New Cairo', c: 5, on: '/assets/hiit-purple.jpg', off: '/assets/hiit-mono.jpg' },
+      { t: '6:30 PM', n: 'Spin', a: 'Sheikh Zayed', c: 4, on: '/assets/spin-purple.jpg', off: '/assets/spin-mono.jpg' },
+      { t: '8:00 PM', n: 'Stretch', a: 'Zamalek', c: 3, on: '/assets/stretch-purple.jpg', off: '/assets/stretch-mono.jpg' }
+    ];
+    this.STEPS = [
+      ['Choose a plan', 'Get credits to use across all studios'],
+      ['Book a class', 'Browse and book instantly across studios'],
+      ['Train anywhere', 'Show up and train — under one membership']
+    ];
+    this.state = { pv: 0, booked: {}, note: '', vh: (typeof window !== 'undefined' ? window.innerHeight : 900), r: 0, c: 0, faq: 0, heroEmail: '', heroDone: false, ctaEmail: '', ctaDone: false };
+  }
+  componentDidMount() {
+    this.startReel(); this.startCls();
+    this.onResize = () => this.setState({ vh: window.innerHeight });
+    window.addEventListener('resize', this.onResize);
+    this.onResize();
+  }
+  componentWillUnmount() { clearInterval(this.reelT); clearInterval(this.clsT); window.removeEventListener('resize', this.onResize); }
+  startReel() { clearInterval(this.reelT); this.reelT = setInterval(() => this.setState((s) => ({ r: (s.r + 1) % 5 })), 2800); }
+  startCls() { clearInterval(this.clsT); this.clsT = setInterval(() => this.setState((s) => ({ c: (s.c + 1) % 5 })), 4200); }
+  renderVals() {
+    const s = this.state;
+    const reel = {
+      label: this.REEL[s.r].label,
+      num: '0' + (s.r + 1) + ' / 05',
+      shots: this.REEL.map((x, i) => ({ src: x.src, o: s.r === i ? 1 : 0, k: s.r === i ? 'live' : '' })),
+      bars: this.REEL.map((x, i) => ({
+        aria: 'Show ' + x.label, k: s.r === i ? 'run' : '', tf: i < s.r ? 'scaleX(1)' : (i === s.r ? 'scaleX(1)' : 'scaleX(0)'),
+        go: () => { this.setState({ r: i }); this.startReel(); }
+      }))
+    };
+    const cls = {
+      line: this.CLS[s.c].line,
+      num: '0' + (s.c + 1) + ' / 05',
+      imgs: this.CLS.map((x, i) => ({ src: x.src, o: s.c === i ? 1 : 0, z: s.c === i ? 1 : 1.08 })),
+      rows: this.CLS.map((x, i) => ({
+        name: x.n, on: s.c === i, c: s.c === i ? '#FFFFFF' : 'rgba(255,255,255,.28)', dot: s.c === i ? 1 : 0,
+        pick: () => { clearInterval(this.clsT); if (this.state.c !== i) this.setState({ c: i }); }
+      })),
+      resume: () => this.startCls()
+    };
+    const faq = this.FAQ.map((f, i) => ({
+      q: f[0], a: f[1], open: s.faq === i, rows: s.faq === i ? '1fr' : '0fr', rot: s.faq === i ? 45 : 0,
+      toggle: () => this.setState({ faq: this.state.faq === i ? -1 : i })
+    }));
+    // live demo
+    const used = Object.keys(s.booked).reduce((t, k) => t + this.DEMO[+k].c, 0);
+    const bal = 20 - used;
+    const any = Object.keys(s.booked).length > 0;
+    const active = any ? 2 : 1;
+    const demo = {
+      bal: bal, balC: bal <= 5 ? '#5E2B97' : '#0A0A0A', note: s.note,
+      steps: this.STEPS.map((st, i) => ({
+        n: '0' + (i + 1), t: st[0], d: st[1], mark: i < active ? '  ✓' : '',
+        c: i <= active ? '#0A0A0A' : '#9A9AA0', sc: i <= active ? '#3A3A3F' : '#9A9AA0', bc: i <= active ? '#5E2B97' : 'rgba(10,10,10,.14)'
+      })),
+      rows: this.DEMO.map((d, i) => {
+        const on = !!s.booked[i];
+        const short = !on && d.c > bal;
+        return {
+          time: d.t, name: d.n, area: d.a, cr: d.c, on: on,
+          bg: s.pv === i ? '#FFFFFF' : 'transparent',
+          btn: on ? 'Booked ✓' : (short ? 'Top up' : 'Book'),
+          bb: on ? '#5E2B97' : (short ? '#E2E2E2' : '#0A0A0A'), bf: on ? '#FFFFFF' : (short ? '#6A6A70' : '#FFFFFF'),
+          aria: (on ? 'Cancel ' : 'Book ') + d.n + ' at ' + d.t,
+          focus: () => { if (this.state.pv !== i) this.setState({ pv: i }); },
+          book: () => {
+            const b = Object.assign({}, this.state.booked);
+            if (b[i]) { delete b[i]; this.setState({ booked: b, pv: i, note: d.n + ' cancelled — ' + d.c + ' credits back in your account.' }); return; }
+            const left = 20 - Object.keys(b).reduce((t, k) => t + this.DEMO[+k].c, 0);
+            if (d.c > left) { this.setState({ pv: i, note: 'Out of credits? You can purchase a new credit package at any time.' }); return; }
+            b[i] = true;
+            this.setState({ booked: b, pv: i, note: d.n + ' booked — ' + d.c + ' credits used. Show up and train.' });
+          }
+        };
+      })
+    };
+    const cur = this.DEMO[s.pv];
+    const lit = !!s.booked[s.pv];
+    const imgs = [];
+    this.DEMO.forEach((d, i) => {
+      imgs.push({ src: d.off, o: s.pv === i ? 1 : 0 });
+      imgs.push({ src: d.on, o: s.pv === i && s.booked[i] ? 1 : 0 });
+    });
+    const room = {
+      imgs: imgs, name: cur.n, time: cur.t, area: cur.a, cr: cur.c,
+      booked: lit, idle: !lit, lit: lit ? 1 : 0,
+      state: lit ? 'Lights on' : 'Lights off', stC: lit ? '#FFFFFF' : '#B5B5B5'
+    };
+    const valid = (v) => /.+@.+\..+/.test(String(v || '').trim());
+    return {
+      heroH: s.vh > 0 && s.vh <= 1600 ? '100svh' : '900px',
+      demo: demo, room: room,
+      reel: reel, cls: cls, faq: faq,
+      hero: { email: s.heroEmail, err: s.heroErr || '', open: !s.heroDone, done: s.heroDone, change: (e) => this.setState({ heroEmail: e.target.value, heroErr: '' }), submit: () => { if (valid(this.state.heroEmail)) { window.actvSubmit('Waitlist', { email: String(this.state.heroEmail).trim(), source: 'Hero' }); this.setState({ heroDone: true, heroErr: '' }); } else this.setState({ heroErr: 'Please enter a valid email address' }); } },
+      cta: { email: s.ctaEmail, err: s.ctaErr || '', open: !s.ctaDone, done: s.ctaDone, change: (e) => this.setState({ ctaEmail: e.target.value, ctaErr: '' }), submit: () => { if (valid(this.state.ctaEmail)) { window.actvSubmit('Waitlist', { email: String(this.state.ctaEmail).trim(), source: 'Bottom of page' }); this.setState({ ctaDone: true, ctaErr: '' }); } else this.setState({ ctaErr: 'Please enter a valid email address' }); } }
+    };
+  }
+}
+window.dcLite.mount(document.getElementById('app'), document.getElementById('dc-tpl'), Component, {});
+</script>
+</body>
+</html>

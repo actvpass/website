@@ -131,7 +131,7 @@ a{color:#FFFFFF;text-decoration:none}
 <div style="flex: 1 1 auto; background: #F4F4F4; border-radius: 28px; padding: 32px; display: flex; flex-direction: column">
 <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; padding-bottom: 24px; border-bottom: 1px solid rgba(10,10,10,.1)">
 <div><p class="cap" style="margin: 0 0 12px; color: #6A6A70">Your credits</p><p class="x" aria-live="polite" style="margin: 0; font-size: 72px"><span style="color: {{demo.balC}}; transition: color .4s ease">{{demo.bal}}</span><span style="font-size: 24px; color: #9A9AA0"> / 20</span></p></div>
-<p class="cap" style="margin: 0; text-align: right; line-height: 1.8; color: #6A6A70">Example plan<br>Credits never expire</p>
+<p class="cap" style="margin: 0; text-align: right; line-height: 1.8; color: #6A6A70">Example plan</p>
 </div>
 <sc-for list="{{demo.rows}}" as="r" hint-placeholder-count="4">
 <div class="drow" onMouseEnter="{{r.focus}}" style="display: grid; grid-template-columns: 96px minmax(0, 1fr) 96px 150px; align-items: center; gap: 16px; padding: 16px 14px; margin-top: 6px; border-radius: 18px; background: {{r.bg}}">
@@ -185,8 +185,7 @@ a{color:#FFFFFF;text-decoration:none}
 <div style="position: relative; min-height: 820px; margin: 12px; border-radius: 32px; overflow: hidden; background: #0A0A0A"><img class="slowzoom" src="/assets/reformer-purple.jpg" alt="Reformer studio" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></div>
 <div style="padding: 120px 64px; display: flex; flex-direction: column; justify-content: center">
 <div style="padding: 36px 0; border-bottom: 1px solid rgba(255,255,255,.14)"><p class="x" style="margin: 0; font-size: clamp(56px, 6vw, 92px)">3 cities</p><p class="cap" style="margin: 18px 0 0; color: #B5B5B5">Cairo · El Gouna · North Coast</p></div>
-<div style="padding: 36px 0; border-bottom: 1px solid rgba(255,255,255,.14)"><p class="x" style="margin: 0; font-size: clamp(56px, 6vw, 92px)">1 app</p><p class="cap" style="margin: 18px 0 0; color: #B5B5B5">Every studio. One membership.</p></div>
-<div style="padding: 36px 0"><p class="x" style="margin: 0; font-size: clamp(56px, 6vw, 92px)">0 expiry</p><p class="cap" style="margin: 18px 0 0; color: #B5B5B5">Your credits never expire</p></div>
+<div style="padding: 36px 0"><p class="x" style="margin: 0; font-size: clamp(56px, 6vw, 92px)">1 app</p><p class="cap" style="margin: 18px 0 0; color: #B5B5B5">Every studio. One membership.</p></div>
 </div>
 </section>
 
@@ -302,8 +301,7 @@ class Component extends DCLogic {
       ['How does ACTVPASS work?', "ACTVPASS gives you access to Egypt's top fitness studios through one app. You subscribe to a monthly plan, receive credits, and use them to book classes across different studios."],
       ['What are credits and how do I use them?', 'Credits are used to book classes. Each class has a set credit value depending on the studio and time. Choose a class and reserve your spot using your credits.'],
       ['What subscription plans are available?', 'ACTVPASS offers different monthly plans based on how often you train. The more credits you choose, the better the value per class.'],
-      ['Do my credits expire?', 'No — your credits never expire. Any unused credits stay in your account until you use them.'],
-      ['Can I cancel my subscription anytime?', 'Yes. You can cancel anytime with no commitments. Even after cancelling, your remaining credits stay in your account.'],
+      ['Can I cancel my subscription anytime?', 'Yes. You can cancel anytime with no commitments.'],
       ['What kind of studios will I have access to?', 'Only premium, curated studios. From Pilates and yoga to HIIT and boxing — every studio is selected for its quality and experience.'],
       ['What happens if I run out of credits?', 'You can purchase a new credit package at any time.'],
       ['Where is ACTVPASS available?', 'ACTVPASS is currently available in Cairo, El Gouna, and the North Coast — here for you wherever you go.']
